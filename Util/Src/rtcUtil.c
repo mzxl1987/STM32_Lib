@@ -3,6 +3,8 @@
 
 #include "rtc.h"
 
+_calendar_obj calendar;				//时钟结构体 
+
 static uint8_t mon_table[12]={31,28,31,30,31,30,31,31,30,31,30,31}; 
 
 uint8_t MY_RTC_Init(RTC_HandleTypeDef *hrtc)
