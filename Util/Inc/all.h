@@ -27,7 +27,7 @@
 //#include "config.h"
 //#include "miniConfig.h"
 //#include "gpioUtil.h"
-//#include "arrayUtil.h"
+#include "arrayUtil.h"
 //#include "ds3231Util.h"
 //#include "eepromUtil.h"
 //#include "flashUtil.h"
@@ -40,7 +40,7 @@
 #include "printUtil.h"
 #include "DMAUtil.h"
 #include "uartBuffer.h"
-#include "ATUtil.h"
+#include "UartUtil.h"
 //#include "ProtocolUtil.h"
 //#include "LTE_M8321.h"
 
@@ -57,10 +57,12 @@
 
 //定义基本变量
 extern uint32_t uart1_idle;
+extern uint8_t uart1_data_DMA[];
 extern uint8_t uart1_data[];
 
 //定义结构体变量
 extern DMAQueue dmaQueue_uart1;
+extern UartFrame uartFrame_uart1;
 
 
 

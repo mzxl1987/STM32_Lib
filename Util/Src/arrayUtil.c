@@ -1,5 +1,6 @@
 #include "arrayUtil.h"
 
+#include "all.h"
 
 /**
  * uint8_t[] to uint32_t
@@ -34,7 +35,7 @@ uint16_t convert_to_uint16_low_mode(uint8_t *data,uint32_t start){
 }
 
 /** uint32_t to uint8_t[] 小端模式 **/
-void convert_uint32_to_uint8_array_low_mode(uint32_t source,uint8_t * dest,uint32_t dest_start){
+void convert_uint32_to_uint8_Array_low_mode(uint32_t source,uint8_t * dest,uint32_t dest_start){
 	dest[dest_start + 0] = source & 0xFF;
 	dest[dest_start + 1] = (source >> 8) & 0xFF;
 	dest[dest_start + 2] = (source >> 16) & 0xFF;
@@ -57,7 +58,7 @@ uint8_t numberToChar(uint32_t number){
 /**
  * 获取指定次数字符的位置
  */
-uint32_t array_char_index(uint8_t * source,uint32_t source_length, uint8_t value,uint32_t count){  
+uint32_t Array_char_index(uint8_t * source,uint32_t source_length, uint8_t value,uint32_t count){  
 
   uint32_t inner_count = 0;
 	uint32_t i = 0;
@@ -77,7 +78,7 @@ uint32_t array_char_index(uint8_t * source,uint32_t source_length, uint8_t value
  /********************************************
  * 拷贝部分数据到目标数组中
  ********************************************/
- void array_copy(uint8_t * dest, uint32_t dest_start, uint8_t * source, uint32_t source_start, uint32_t count){
+ void Array_copy(uint8_t * dest, uint32_t dest_start, uint8_t * source, uint32_t source_start, uint32_t count){
 	uint32_t i = 0;
 	 for(; i < count; i++){
 			dest[dest_start + i] = source[source_start + i];
@@ -111,7 +112,7 @@ void print_hex_sub(uint8_t * data, uint32_t start ,uint count){
 }
 
 
-void array_set(uint8_t * source,uint32_t start, uint32_t len,uint8_t xx){
+void Array_set(uint8_t * source,uint32_t start, uint32_t len,uint8_t xx){
 		for(uint32_t i = 0; i < len; i++){
 					source[start + i] = xx;
 		}
@@ -133,7 +134,7 @@ void bcdToDec(uint8_t * bcd,uint32_t bcd_index,uint8_t * hex,uint32_t hex_index,
 }
 
 /** 反转数组  -------------------------------------------- **/
-void array_reverse(uint8_t * source,uint32_t len){
+void Array_reverse(uint8_t * source,uint32_t len){
   uint32_t i = 0;
 	uint16_t middle = len / 2;
   uint8_t tmp;
@@ -151,7 +152,7 @@ uint8_t byteToBCD(uint8_t b){
 }
 
 /** 数据和循环数组比较是否相等  ------------------------------------- **/
-uint8_t array_equal(uint8_t * dest,uint32_t dest_start,uint8_t * src,uint32_t src_start,uint32_t len){
+uint8_t Array_equal(uint8_t * dest,uint32_t dest_start,uint8_t * src,uint32_t src_start,uint32_t len){
 
 	uint32_t i = 0;
 	
@@ -164,7 +165,7 @@ uint8_t array_equal(uint8_t * dest,uint32_t dest_start,uint8_t * src,uint32_t sr
 }
 
 /** 打印数据  ------------------------------------------------- **/
-void array_print_hex(uint8_t * src,uint32_t start,uint32_t len){
+void Array_print_hex(uint8_t * src,uint32_t start,uint32_t len){
    #if DEBUG
 	 uint32_t i = 0;
 	 
@@ -175,7 +176,7 @@ void array_print_hex(uint8_t * src,uint32_t start,uint32_t len){
 }
 
 /** 打印数据  ------------------------------------------------- **/
-void array_print_str(uint8_t * src,uint32_t start,uint32_t len){
+void Array_print_str(uint8_t * src,uint32_t start,uint32_t len){
    #if DEBUG
 	 uint32_t i = 0;
 	 
@@ -187,12 +188,21 @@ void array_print_str(uint8_t * src,uint32_t start,uint32_t len){
 }
 
 /** 循环数组拷贝  ------------------------------------------------- **/
-void array_loop_buffer_copy(uint8_t * src,uint32_t src_start,uint8_t * dest,uint32_t dest_start,uint32_t len,uint32_t src_len){
+uint8_t Array_loop_buffer_copy(uint8_t * src,uint32_t src_start,uint32_t src_MAX_len,uint8_t * dest,uint32_t dest_start,uint32_t dest_MAX_len, uint32_t len){
 	uint32_t i = 0,index;
 	 for(; i < len; i++){
-			index = (src_start + i) % src_len;
+			index = (src_start + i) % src_MAX_len;
+			
+			if(dest_MAX_len <= dest_start + i){
+				print_error_msg("循环数组拷贝超出 dest数组范围!");
+				return 0;
+			}
+			
 			dest[dest_start + i] = src[index];
+			
 	 }
+	 
+	 return 1;
 }
 
 

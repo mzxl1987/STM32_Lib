@@ -160,7 +160,7 @@ int main(void)
 		print_msg(VERSION);
 		
 		__HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);                                //打开串口1空闲中断	
-		HAL_UART_Receive_DMA(&huart1,uart1_data,UART1_DATA_MAX);     //启用串口DMA接收
+		HAL_UART_Receive_DMA(&huart1,uart1_data_DMA,UART1_DATA_MAX);     //启用串口DMA接收
 		
 		HAL_TIM_Base_Start_IT(&htim3);                                   // 打开TIM3定时器中断
 //		
@@ -204,8 +204,9 @@ int main(void)
 				
 						uint16_t from,length;
 						DMAQueue_pop(&dmaQueue_uart1 ,&from,&length);
-						
-						//ATFrame_copy_uart1(&uartBuffer1,&atFrame_uart1,from, length);
+						Array_loop_buffer_copy(uart1_data_DMA, from, UART1_DATA_MAX,uart1_data,0,UART1_DATA_MAX,length);
+						uartFrame_uart1.length = length;
+						UartFrame_analysis(&uartFrame_uart1);
 						
 					}
 					
