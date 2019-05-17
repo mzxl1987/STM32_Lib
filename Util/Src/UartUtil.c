@@ -9,24 +9,62 @@ void UartFrame_clear(UartFrame * f){
 }
 
 
+static void UartFrame_analysis_usart1(UartFrame * f){
+	
+	print_msg("串口1 数据解析  TODO");
+	//TODO
+	
+}
 
-/** 外网模式 手动附着网络 **/
+static void UartFrame_analysis_usart2(UartFrame * f){
+	
+	print_msg("串口2 数据解析  TODO");
+	//TODO
+	
+}
+
+static void UartFrame_analysis_usart3(UartFrame * f){
+	
+	print_msg("串口3 数据解析  TODO");
+	//TODO
+	
+}
+
+static void UartFrame_analysis_usart4(UartFrame * f){
+	
+	print_msg("串口4 数据解析  TODO");
+	//TODO
+	
+}
+
+static void UartFrame_analysis_usart5(UartFrame * f){
+	
+	print_msg("串口5 数据解析  TODO");
+	//TODO
+	
+}
+
+
+/** 串口数据解析 **/
 void UartFrame_analysis(UartFrame * f){
 	
-	if(f->uart->Instance == USART1){
-		
-		print_msg("串口1 数据 ASCII");
-		
-	}
-	
+	println("**---------------------------------------------------------------**");
 	Array_print_str(f->data,0,f->length);
 	println("**---------------------------------------------------------------**");
 	
+	if(f->uart->Instance == USART1){
+			print_msg("串口1 数据 ASCII");
+			UartFrame_analysis_usart1(f);
+	}
+	
+	if(f->uart->Instance == USART2){
+			print_msg("串口2 数据 ASCII");
+			UartFrame_analysis_usart2(f);
+	}
 	
 	UartFrame_clear(f);	  
 	
 }
-
 
 
 /** 查找符合 head ..... tail  的数据 ，并返回起始下标和长度 **/

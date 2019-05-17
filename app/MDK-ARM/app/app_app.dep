@@ -311,7 +311,7 @@ I (..\..\Util\Inc\DMAUtil.h)(0x5CDE6FAA)
 I (..\..\Util\Inc\uartBuffer.h)(0x5C957B17)
 I (../Inc/miniConfig.h)(0x5CDE370C)
 I (..\..\Util\Inc\UartUtil.h)(0x5CDE7BDB)
-F (..\..\Util\Src\UartUtil.c)(0x5CDE7D0C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\..\Util\Src -I..\..\Util\Inc-I C:\STM32Workspace\stm32CubeMX\STM32_lib\app\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o app\uartutil.o --omf_browse app\uartutil.crf --depend app\uartutil.d)
+F (..\..\Util\Src\UartUtil.c)(0x5CDE8583)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\..\Util\Src -I..\..\Util\Inc-I C:\STM32Workspace\stm32CubeMX\STM32_lib\app\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o app\uartutil.o --omf_browse app\uartutil.crf --depend app\uartutil.d)
 I (..\..\Util\Inc\UartUtil.h)(0x5CDE7BDB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B02A0DF)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5CDE2CB7)
