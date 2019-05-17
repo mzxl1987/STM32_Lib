@@ -1,9 +1,10 @@
 #include "all.h"
 
 uint32_t uart1_idle;
-
 uint8_t uart1_data_DMA[UART1_DATA_MAX];
 uint8_t uart1_data[UART1_DATA_MAX];
+
+uint32_t system_tick;
 
 DMAQueue dmaQueue_uart1;
 UartFrame uartFrame_uart1 = {

@@ -163,7 +163,7 @@ int main(void)
 		HAL_UART_Receive_DMA(&huart1,uart1_data_DMA,UART1_DATA_MAX);     //启用串口DMA接收
 		
 		HAL_TIM_Base_Start_IT(&htim3);                                   // 打开TIM3定时器中断
-//		
+		
 //		__HAL_TIM_CLEAR_IT(&htim4, TIM_IT_UPDATE);                       // 清除TIM4中断更新请求标志 , 防止第一次开启TIM立马进入中断
 //		HAL_TIM_Base_Start_IT(&htim4);                                   //启用TIM4定时器
 		
@@ -207,6 +207,9 @@ int main(void)
 						Array_loop_buffer_copy(uart1_data_DMA, from, UART1_DATA_MAX,uart1_data,0,UART1_DATA_MAX,length);
 						uartFrame_uart1.length = length;
 						UartFrame_analysis(&uartFrame_uart1);
+						
+						printf(" Running Time : %d s \r\n ",system_tick/2);
+						
 						
 					}
 					

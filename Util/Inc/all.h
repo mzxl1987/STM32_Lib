@@ -60,6 +60,8 @@ extern uint32_t uart1_idle;
 extern uint8_t uart1_data_DMA[];
 extern uint8_t uart1_data[];
 
+extern uint32_t system_tick;
+
 //定义结构体变量
 extern DMAQueue dmaQueue_uart1;
 extern UartFrame uartFrame_uart1;

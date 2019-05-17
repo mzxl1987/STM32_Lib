@@ -310,9 +310,7 @@ void TIM3_IRQHandler(void)
 	
 	HAL_GPIO_TogglePin(WDI_GPIO_Port,WDI_Pin);
 	
-//	HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-//	HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
-//	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
+	system_tick++;
 	
   /* USER CODE END TIM3_IRQn 0 */
   HAL_TIM_IRQHandler(&htim3);
