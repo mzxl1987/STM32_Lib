@@ -68,20 +68,18 @@ return ch;
 
 /// 调试串口参数实例化
 
-#define VERSION "STM32_LIB_V1.1.1.20190325"
-#define ADC_SIZE 2
-#define ADC_SAMPLE_SIZE 20
-#define UART_DATA_MAX 1024
-uint8_t uart1_data[UART_DATA_MAX];
+//#define ADC_SIZE 2
+//#define ADC_SAMPLE_SIZE 20
 
-uint32_t adc_DATA[ADC_SIZE];
-uint8_t hasClear;          //清除运行次数
 
-RTC_TimeTypeDef sTime;          //RTC时间
-RTC_DateTypeDef sDate;          //RTC日期
+//uint32_t adc_DATA[ADC_SIZE];
+//uint8_t hasClear;          //清除运行次数
 
-uint32_t adc1_sample[ADC_SAMPLE_SIZE];       //ADC通道数据采集
-uint32_t uart1_idle;
+//RTC_TimeTypeDef sTime;          //RTC时间
+//RTC_DateTypeDef sDate;          //RTC日期
+
+//uint32_t adc1_sample[ADC_SAMPLE_SIZE];       //ADC通道数据采集
+
 
 /* USER CODE END Includes */
 
@@ -162,12 +160,12 @@ int main(void)
 		print_msg(VERSION);
 		
 		__HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);                                //打开串口1空闲中断	
-		HAL_UART_Receive_DMA(&huart1,uart1_data,UART_DATA_MAX);     //启用串口DMA接收
+		HAL_UART_Receive_DMA(&huart1,uart1_data,UART1_DATA_MAX);     //启用串口DMA接收
 		
 		HAL_TIM_Base_Start_IT(&htim3);                                   // 打开TIM3定时器中断
-		
-		__HAL_TIM_CLEAR_IT(&htim4, TIM_IT_UPDATE);                       // 清除TIM4中断更新请求标志 , 防止第一次开启TIM立马进入中断
-		HAL_TIM_Base_Start_IT(&htim4);                                   //启用TIM4定时器
+//		
+//		__HAL_TIM_CLEAR_IT(&htim4, TIM_IT_UPDATE);                       // 清除TIM4中断更新请求标志 , 防止第一次开启TIM立马进入中断
+//		HAL_TIM_Base_Start_IT(&htim4);                                   //启用TIM4定时器
 		
 		 
 	}
@@ -178,16 +176,15 @@ int main(void)
   while (1)
   {
 			
-			/** 调试代码 
+			// 调试代码 
 			{
-			  printf("串口3状态 : %08X\r\n",huart3.gState);
-				HAL_Delay(1000);
+//			  printf("串口1状态 : %08X\r\n",huart1.gState);
 				
 				//生成数据
 				
 				
 			}
-			**/
+			
 			
 			/** 串口1 调试 -------------------------------------------------------------- **/
 			{
@@ -201,7 +198,7 @@ int main(void)
 //					#endif
 					}
 					
-					DMAQueue_push(&dmaQueue_uart1 ,__HAL_DMA_GET_COUNTER(huart1.hdmarx));
+					DMAQueue_push(&dmaQueue_uart1 , huart1);
 					
 					if(!DMAQueue_empty(&dmaQueue_uart1)){
 				
@@ -218,7 +215,7 @@ int main(void)
 				}
 			}
 			
-			HAL_Delay(1000);
+			//HAL_Delay(10);
 
   /* USER CODE END WHILE */
 

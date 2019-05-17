@@ -45,8 +45,23 @@
 //#include "LTE_M8321.h"
 
 
+//define 数据
+#define DEBUG 1
+#define VERSION "STM32_LIB_V1.1.1.20190325"
+#define UART1_DATA_MAX 1024
 
+
+//定义数据结构体
+
+
+
+//定义基本变量
 extern uint32_t uart1_idle;
+extern uint8_t uart1_data[];
+
+//定义结构体变量
+extern DMAQueue dmaQueue_uart1;
+
 
 
 

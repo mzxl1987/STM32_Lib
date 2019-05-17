@@ -2,12 +2,13 @@
 
 #include "all.h"
 
-DMAQueue dmaQueue;
-DMAQueue dmaQueue_uart1;
+
 
 
 /**        插入产生空闲中断时的下标       **/
-uint8_t DMAQueue_push(DMAQueue * dmaQueue, uint16_t remainCount){
+uint8_t DMAQueue_push(DMAQueue * dmaQueue, UART_HandleTypeDef uart){
+
+	uint16_t remainCount = __HAL_DMA_GET_COUNTER(uart.hdmarx);
 
 	println("DMA Queue PUSH Begin");
 

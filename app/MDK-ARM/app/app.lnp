@@ -7,6 +7,7 @@
 "app\uartbuffer.o"
 "app\rtcutil.o"
 "app\arrayutil.o"
+"app\all.o"
 "app\stm32f1xx_hal_rcc_ex.o"
 "app\stm32f1xx_hal_rtc.o"
 "app\stm32f1xx_hal_uart.o"
