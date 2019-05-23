@@ -8,6 +8,8 @@
 "app\arrayutil.o"
 "app\all.o"
 "app\uartutil.o"
+"app\eepromutil.o"
+"app\canutil.o"
 "app\stm32f1xx_hal_rcc_ex.o"
 "app\stm32f1xx_hal_rtc.o"
 "app\stm32f1xx_hal_uart.o"
@@ -27,6 +29,7 @@
 "app\stm32f1xx_hal_dma.o"
 "app\stm32f1xx_hal_gpio_ex.o"
 "app\stm32f1xx_hal_crc.o"
+"app\stm32f1xx_hal_can.o"
 "app\crc.o"
 "app\stm32f1xx_it.o"
 "app\adc.o"
@@ -39,6 +42,7 @@
 "app\i2c.o"
 "app\gpio.o"
 "app\rtc.o"
+"app\can.o"
 --library_type=microlib --strict --scatter "app\app.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

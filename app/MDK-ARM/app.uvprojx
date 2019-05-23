@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F1xx/Include; ../Drivers/CMSIS/Include; ..\..\Util\Src; ..\..\Util\Inc</IncludePath>
+              <IncludePath>../Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;  ../Drivers/CMSIS/Include;  ..\..\Util\Src;  ..\..\Util\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -439,11 +439,6 @@
               <FilePath>..\..\Util\Src\DMAUtil.c</FilePath>
             </File>
             <File>
-              <FileName>ATUtil.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Util\Src\ATUtil.c</FilePath>
-            </File>
-            <File>
               <FileName>uartBuffer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Util\Src\uartBuffer.c</FilePath>
@@ -457,6 +452,26 @@
               <FileName>arrayUtil.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Util\Src\arrayUtil.c</FilePath>
+            </File>
+            <File>
+              <FileName>all.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Util\Src\all.c</FilePath>
+            </File>
+            <File>
+              <FileName>UartUtil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Util\Src\UartUtil.c</FilePath>
+            </File>
+            <File>
+              <FileName>eepromUtil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Util\Src\eepromUtil.c</FilePath>
+            </File>
+            <File>
+              <FileName>canUtil.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Util\Src\canUtil.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -561,6 +576,11 @@
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f1xx_hal_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -625,6 +645,11 @@
               <FileName>rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/can.c</FilePath>
             </File>
           </Files>
         </Group>
